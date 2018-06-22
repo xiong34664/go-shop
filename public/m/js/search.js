@@ -8,7 +8,7 @@ $(function () {
 
     searchLest(keyArr);
     /*实现用户点击搜索按钮跳转搜索结果页面*/
-    $("#search-btn").on("click", function () {
+    $("#search-btn").on("tap", function () {
         var keyword = $(this).prev().val().trim();
         if (keyword) {
             keyArr.unshift(keyword);
@@ -22,7 +22,7 @@ $(function () {
         }
     })
 
-    $("#clearBtn").on("click", function () {
+    $("#clearBtn").on("tap", function () {
         mui.confirm('确认删除所有记录？', 'letao', function(e) {
             if (e.index === 1) {
                 localStorage.clear();
@@ -34,7 +34,7 @@ $(function () {
         });
     });
 
-    $(".mui-table-view").on("click",".mui-slider-handle",function () {
+    $(".mui-table-view").on("tap",".mui-slider-handle",function () {
         location.href = "search-result.html?proName="+$(this).text();
     })
     //第二个demo，向左拖拽后显示操作图标，释放后自动触发的业务逻辑

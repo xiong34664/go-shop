@@ -32,4 +32,8 @@
   font-size: 14px;
   color: #069;
 }
+.my-login .mui-input-row label,
+.my-login .mui-input-row label ~ input {
+  font-size: 16px;
+}
 /*# sourceMappingURL=form.css.map */
