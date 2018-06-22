@@ -1,0 +1,61 @@
+/**
+ * Created by Administrator on 2018/6/20 22:07.
+ */
+.my-content {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.my-content .category-left,
+.my-content .category-right {
+  height: 100%;
+  position: relative;
+}
+.my-content .category-left {
+  width: 80px;
+  float: left;
+}
+.my-content .category-left .links {
+  background-color: #fff;
+}
+.my-content .category-left .links a {
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.my-content .category-left .links a.active {
+  background-color: #f5f5f5;
+  border-right: 1px solid transparent;
+}
+.my-content .category-right {
+  margin-left: 90px;
+}
+.my-content .category-right .brand-list {
+  background-color: #fff;
+  margin-top: 10px;
+}
+.my-content .category-right .brand-list li {
+  width: 33.333%;
+  float: left;
+}
+.my-content .category-right .brand-list li a {
+  display: block;
+}
+.my-content .category-right .brand-list li a img {
+  width: 100%;
+}
+.my-content .category-right .brand-list li a p {
+  text-align: center;
+}
+.my-content .category-right .brand-list .no-results {
+  padding: 10px;
+  font-size: 14px;
+  color: #f20;
+}
+/*# sourceMappingURL=category.css.map */

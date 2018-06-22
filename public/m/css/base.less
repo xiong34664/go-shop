@@ -1,0 +1,143 @@
+/**
+ * Created by Administrator on 2018/6/18 23:43.
+ */
+
+@color01:#006699;
+
+/* 公共样式 */
+
+body,.mui-content{
+  background-color: #fff;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.my-header {
+  background: @color01;
+  h1 {
+    color: #FFF;
+  }
+  .mui-icon{
+    color: #FFF;
+  }
+}
+
+.my-footer {
+  background: @color01;
+  .mui-tab-item {
+    color: #FFF;
+    &.mui-active {
+      color: darkorange;
+    }
+  }
+}
+
+
+
+.nav-links {
+  padding: 10px;
+  /* overflow: hidden; */
+  a {
+    width: 33.333%;
+    float: left;
+    img {
+      width: 100%;
+      /*vertical-align:top;*/
+      display: block;
+    }
+  }
+}
+
+.brand {
+  padding: 0 10px;
+  .title {
+    width: 100%;
+  }
+  ul {
+    overflow: hidden;
+    padding: 10px 0;
+    li{
+      width: 25%;
+      float: left;
+      a{
+        display: block;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.product {
+  padding: 0 10px;
+  position: relative;
+  .title {
+    width: 100%;
+  }
+  ul {
+    padding: 6px 0;
+    li {
+      width: 50%;
+      float: left;
+      padding: 5px;
+      a {
+        display: block;
+        box-shadow: 0 0 5px #ccc;
+        padding: 5px;
+      }
+      img {
+        width: 100%;
+      }
+      .name{
+        display: block;
+        color: #8f8f94;
+        font-size: 14px;
+        text-align: center;
+        line-height: 18px;
+        height: 38px;
+        overflow: hidden;
+        padding: 5px;
+      }
+      p {
+        text-align: center;
+        padding-top:6px;
+        span{
+          &:first-child{
+            color: #f20;
+            padding-right: 2px;
+          }
+          &:last-child {
+            text-decoration: line-through;
+            padding-left: 2px;
+          }
+        }
+      }
+      .buy-now {
+        display: block;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background: @color01;
+        color: #FFF;
+        font-size: 14px;
+        border-radius: 4px;
+        margin: 0 auto 5px auto;
+      }
+    }
+  }
+
+}
+
+.mui-scroll-wrapper {
+  top: 44px;
+  bottom: 50px;
+}

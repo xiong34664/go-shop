@@ -1,0 +1,38 @@
+/**
+ * Created by Administrator on 2018/6/22 10:01.
+ */
+@color : #069;
+.my-login{
+  &:after{
+    display: none;
+  }
+  .getCode{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: @color ;
+  }
+  .login-button{
+    padding:0 10px;
+    height: auto;
+    &:after{
+      display: none;
+    }
+    button{
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      background: @color;
+    }
+  }
+
+  .login-now{
+    display: block;
+    margin-top: 10px;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 14px;
+    color: @color ;
+  }
+}

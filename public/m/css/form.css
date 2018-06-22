@@ -1,0 +1,35 @@
+/**
+ * Created by Administrator on 2018/6/22 10:01.
+ */
+.my-login:after {
+  display: none;
+}
+.my-login .getCode {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: #069;
+}
+.my-login .login-button {
+  padding: 0 10px;
+  height: auto;
+}
+.my-login .login-button:after {
+  display: none;
+}
+.my-login .login-button button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background: #069;
+}
+.my-login .login-now {
+  display: block;
+  margin-top: 10px;
+  padding-right: 10px;
+  text-align: right;
+  font-size: 14px;
+  color: #069;
+}
+/*# sourceMappingURL=form.css.map */
