@@ -34,16 +34,21 @@ $(function () {
                 url: "/user/updatePassword",
                 type:'post',
                 data:$(".my-login").serialize(),
+                beforeSend:function(){
+                    mui(this).button('loading');
+                }.bind(this),
                 success:function (res) {
                     if(res.success){
+                        mui.toast("修改密码成功");
                         setTimeout(function () {
                             location.href = "login.html";
                         },2000)
                     }else{
-                        mui.toast("验证码错误");
+                        mui.toast(res.message);
+                        mui(this).button('reset');
                     }
 
-                }
+                }.bind(this)
             })
         }
     })

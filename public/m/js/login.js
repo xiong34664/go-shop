@@ -25,7 +25,6 @@ $(function () {
                 type: "post",
                 data: $(".my-login").serialize(),
                 beforeSend:function(){
-                    console.log(this);
                     mui(this).button('loading');
                 }.bind(this),
                 success: function (res) {
