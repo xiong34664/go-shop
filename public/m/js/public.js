@@ -25,3 +25,23 @@ $(function () {
     });
 
 });
+
+/**
+ *
+ * @param {string} url  链接
+ * @param {string} name  要获取的参数名
+ * @return {string} value 参数名称对应打参数值
+ */
+function getParamsByUrl(url, name) {
+    var parms = url.substr(url.indexOf('?') + 1);
+
+    var parm = parms.split("&");
+
+    for (var i in parm) {
+        var str = parm[i].split("=");
+        if(str[0] === name){
+            return str[1];
+        }
+    }
+    return null;
+}
