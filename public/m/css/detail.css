@@ -1,0 +1,92 @@
+/**
+ * Created by Administrator on 2018/6/23 20:27.
+ */
+.mui-slider img {
+  vertical-align: top;
+}
+.product-title {
+  font-size: 16px;
+  padding: 10px;
+}
+.price {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+.price .now {
+  font-size: 24px;
+  color: #ea543d;
+}
+.price .old {
+  color: #ccc;
+  text-decoration: line-through;
+  padding-left: 10px;
+}
+.size {
+  padding: 10px;
+  font-size: 14px;
+}
+.size span {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.size span.active {
+  background-color: #fa672d;
+  color: #fff;
+}
+.num {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 28px;
+  border-top: 1px solid #ccc;
+}
+.num div {
+  float: left;
+}
+.num .selectNum {
+  padding: 0 10px;
+}
+.num .selectNum span {
+  float: left;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.num .selectNum input {
+  float: left;
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+}
+.btns {
+  padding: 10px;
+}
+.btns span,
+.btns a {
+  float: left;
+  width: 50%;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #991020;
+  color: #fff;
+}
+.btns a {
+  background-color: #fa672d;
+}
+/*# sourceMappingURL=detail.css.map */

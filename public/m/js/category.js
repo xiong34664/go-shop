@@ -15,6 +15,9 @@ $(function () {
             getSecondCategory(res.rows[0].id);
         }
     });
+    function aaa(res){
+        console.log(res);
+    }
 
     $(".links").on("tap","a",function () {
         var id = $(this).data("id");

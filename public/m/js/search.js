@@ -35,7 +35,7 @@ $(function () {
     });
 
     $(".mui-table-view").on("tap",".mui-slider-handle",function () {
-        location.href = "search-result.html?proName="+$(this).text();
+        location.href = "search-result.html?proName="+$.trim($(this).text());
     })
     //第二个demo，向左拖拽后显示操作图标，释放后自动触发的业务逻辑
     $('.mui-table-view').on('slideleft', '.mui-table-view-cell', function() {

@@ -2,11 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Title</title>
+    <title>购物车</title>
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/template/template-web.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/cart.js"></script>
 </head>
 <body>
+<header class="mui-bar mui-bar-nav my-header">
+    <h1 class="mui-title">购物车</h1>
+    <span class="mui-icon mui-icon-arrowleft mui-pull-left"></span>
+    <a href="javascript:;" class="mui-icon mui-icon-reload mui-pull-right"></a>
+</header>
+<nav class="mui-bar mui-bar-tab my-footer">
+    <a class="mui-tab-item" href="index.html">
+        <span class="mui-icon mui-icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item" href="category.html">
+        <span class="mui-icon mui-icon-bars"></span>
+        <span class="mui-tab-label">分类</span>
+    </a>
+    <a class="mui-tab-item mui-active" href="cart.html">
+        <span class="mui-icon fa fa-shopping-cart"></span>
+        <span class="mui-tab-label">购物车</span>
+    </a>
+    <a class="mui-tab-item" href="user.html">
+        <span class="mui-icon mui-icon-person"></span>
+        <span class="mui-tab-label">会员中心</span>
+    </a>
+</nav>
+<div class="cart-content" id="refreshContainer">
+    <div>
+        <ul class="mui-table-view" id="cart_lists">
 
+        </ul>
+    </div>
+    <div class="cart_order">订单总额：¥<span id="cartAmount">0.00</span> <a href="javascript:;">生成订单</a></div>
+</div>
+<script type="text/template" id="cartList">
+    {{ each items}}
+    <li class="mui-table-view-cell mui-media" data-id="{{$value['id']}}">
+        <div class="mui-slider-right mui-disabled">
+            <span class="mui-btn mui-btn-blue mui-icon mui-icon-compose edit-btn"></span>
+            <span class="mui-btn mui-btn-red mui-icon mui-icon-trash del-btn"></span>
+        </div>
+        <a href="javascript:;" class="mui-navigate-right mui-slider-handle">
+            <img class="mui-media-object mui-pull-left" src="{{$value['pic'][0]['picAddr']}}">
+            <div class="mui-media-body">
+                <p class="name">{{$value['proName']}}</p>
+                <p class="info">
+                    <span class="price">&yen;{{$value['price']}}</span>
+                    <span class="oldPrice">&yen;{{$value['oldPrice']}}</span>
+                    <span class="number">x{{$value['num']}}双</span>
+                </p>
+                <p><span class="size">鞋码：{{$value['size']}}</span></p>
+            </div>
+            <input type="checkbox">
+        </a>
+    </li>
+    {{ /each}}
+</script>
+<script type="text/template" id="cartUpdateTpl">
+    <div class="detail-size">尺码：<% for(var i = arr[0];i <= arr[1];i++){ %> <span class="<%=i==size?'active':''%>"><%=i%></span><%
+        } %>
+    </div>
+    <div class="detail-num">数量：<span>-</span><input readonly type="text" value="<%=num||0%>" data-max="<%=productNum%>"/><span>+</span></div>
+</script>
 </body>
 </html>

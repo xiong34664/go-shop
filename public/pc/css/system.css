@@ -155,3 +155,7 @@ html,
 .main .body .show{
 	padding-top:15px;
 }
+
+#categorySecond img{
+    height: 50px;
+}

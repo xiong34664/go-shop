@@ -2,23 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/search-result.css">
+    <link rel="stylesheet" href="css/detail.css">
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="assets/mui/js/mui.min.js"></script>
     <script src="assets/template/template-web.js"></script>
     <script src="js/public.js"></script>
-    <script src="js/search-result.js"></script>
+    <script src="js/detail.js"></script>
 </head>
 <body>
 <header class="mui-bar mui-bar-nav my-header">
-    <h1 class="mui-title">搜索中心</h1>
+    <h1 class="mui-title">商品详情</h1>
     <span class="mui-icon mui-icon-arrowleft mui-pull-left"></span>
+    <a href="search.html" class="mui-icon mui-icon-search mui-pull-right"></a>
 </header>
 <nav class="mui-bar mui-bar-tab my-footer">
     <a class="mui-tab-item" href="index.html">
@@ -38,39 +40,52 @@
         <span class="mui-tab-label">会员中心</span>
     </a>
 </nav>
-<div class="search-content" id="refreshContainer">
-    <div>
-        <div class="mui-row filter">
-            <div class="mui-col-sm-6 mui-col-xs-6" id="priceSort">
-                价格 <span class="mui-icon mui-icon-arrowdown"></span>
+<div class="mui-scroll-wrapper">
+    <div class="mui-scroll">
+        <div id="productBox">
+
+        </div>
+
+        <div class="num mui-clearfix">
+            <div>数量:</div>
+            <div class="selectNum">
+                <span id="reduce">-</span>
+                <input type="number" value="1" id="inp" readonly>
+                <span id="increase">+</span>
             </div>
-            <div class="mui-col-sm-6 mui-col-xs-6" id="numSort">
-                销量 <span class="mui-icon mui-icon-arrowdown"></span>
+            <div id="kucunNum">
+                剩余: <span></span>件
             </div>
         </div>
-        <div class="product">
-            <ul class="mui-clearfix" id="search_box">
-
-            </ul>
+        <div class="btns">
+            <a href="cart.html">查看购物车</a>
+            <span id="addCart">添加购物车</span>
         </div>
     </div>
 </div>
-<script type="text/template" id="search_result">
-    {{ each items }}
-    <li>
-        <a href="detail.html?id={{$value['id']}}">
-            <img src="{{$value['pic'][0]['picAddr']}}">
-            <span class="name">
-							{{$value['proName']}}
-						</span>
-            <p>
-                <span>&yen;{{$value['price']}}</span>
-                <span>&yen;{{$value['oldPrice']}}</span>
-            </p>
-            <a  href="javascript:;" class="buy-now">立即购买</a>
-        </a>
-    </li>
-    {{ /each}}
+<script type="text/template" id="productTpl">
+    <div class="mui-slider">
+        <div class="mui-slider-group">
+            {{ each pic }}
+            <div class="mui-slider-item"><img src="{{$value['picAddr']}}" /></div>
+            {{ /each}}
+        </div>
+    </div>
+    <div class="product-title">
+        {{proName}}
+    </div>
+    <div class="price">
+        价格:
+        <span class="now">&yen;{{price}}</span>
+        <span class="old">&yen;{{oldPrice}}</span>
+    </div>
+    <div class="size">
+        尺码 :
+        <% var size=size.split('-') %>
+        <% for (var i=size[0];i<=size[1];i++){ %>
+        <span><%=i%></span>
+        <% } %>
+    </div>
 </script>
 </body>
 </html>
